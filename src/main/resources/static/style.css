@@ -1,0 +1,75 @@
+body{
+    background: lightgrey;
+}
+.accueil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+h1 {
+    text-align: center;
+    width: 100%;
+}
+.liste_fest{
+    width: 100%;
+    border-spacing: 0;
+}
+thead{
+    width: 100%;
+    background: white;
+}
+.tpair{
+    background: lightgrey;
+}
+.timpair{
+    background: white;
+}
+.edit{
+    background: black;
+    border-color: black;
+    color: white;
+}
+.ajout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.entree{
+    display: flex;
+    gap: 10px;
+    width: 50%;
+    text-align: right;
+}
+.entree label{
+    width: 50%;
+    text-align: right;
+}
+.entree input{
+    width: 50%;
+    border-radius: 3px;
+}
+.reponse{
+    display: flex;
+}
+.envoi{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+.enr{
+    background: greenyellow;
+    border-color: green;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+    padding: 5px;
+}
+button{
+    background: greenyellow;
+    border-color: green;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}
