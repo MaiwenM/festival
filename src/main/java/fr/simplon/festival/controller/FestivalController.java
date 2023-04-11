@@ -8,10 +8,6 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class FestivalController {
 
-    @Autowired
-    private FestivalDao festivalDao;
 
-    @Autowired
-    private FestivalDaoImpl festivalDaoImpl;
 
 }
