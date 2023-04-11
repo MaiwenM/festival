@@ -1,13 +1,13 @@
 package fr.simplon.festival.dao.impl;
 
 import fr.simplon.festival.dao.FestivalDao;
-import fr.simplon.festival.dao.FestivalRepository;
 import fr.simplon.festival.entity.Festival;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
-
+@Repository
 public class FestivalDaoImpl implements FestivalDao {
 
     @Autowired

@@ -1,4 +1,4 @@
-package fr.simplon.festival.dao;
+package fr.simplon.festival.dao.impl;
 
 import fr.simplon.festival.entity.Festival;
 import org.springframework.data.jpa.repository.JpaRepository;
