@@ -11,17 +11,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class FestivalController {
 
     @Autowired
     private FestivalDao festivalDao;
 
-    @GetMapping("/formulaireAjout")
+    @Autowired
+    private FestivalDaoImpl festivalDaoImpl;
+
+    @GetMapping("/formulaire_ajout")
     public String afficherLaCarte(Model model) {
         model.addAttribute("festival", new Festival());
         return "accueil";
-
     }
 
     @PostMapping("/ajoutFestival")
@@ -30,7 +34,7 @@ public class FestivalController {
         return "redirect:/";
     }
 
-    @GetMapping("/FormulaireEdit/{id}")
+    /**@GetMapping("/formulaire_edit/{id}")
     public String afficherFormulaireEdition(@PathVariable("id") Long id, Model model) {
         Festival festival = festivalDao.getFestivalById(id);
         model.addAttribute("festival", festival);
@@ -41,6 +45,13 @@ public class FestivalController {
     public String enregistrerEditionFestival(@ModelAttribute("festival") Festival festival) {
         festivalDao.updateFestival(festival);
         return "redirect:/";
+    }*/
+
+    @GetMapping("/festivals")
+    public String afficherFestivals(Model model){
+        List<Festival> festivals = festivalDaoImpl.getAllFestivals();
+        model.addAttribute("festivals", festivals);
+        return "festivals";
     }
 
 }

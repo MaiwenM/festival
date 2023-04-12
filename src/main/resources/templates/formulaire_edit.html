@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Edition d'un festival</title>
@@ -10,27 +10,27 @@
 <form class = "ajout">
     <div class="entree">
         <label>Nom :</label>
-        <input type="text">
+        <input type="text" th:field="*{nom}">
     </div>
     <div class="entree">
         <label>Ville :</label>
-        <input type="text">
+        <input type="text" th:field="*{ville}">
     </div>
     <div class="entree">
         <label>Lieu :</label>
-        <input type="text">
+        <input type="text" th:field="*{lieu}">
     </div>
     <div class="entree">
         <label>Date de début :</label>
-        <input type="date">
+        <input type="date" th:field="*{debut}">
     </div>
     <div class="entree">
         <label>Date de fin :</label>
-        <input type="date">
+        <input type="date" th:field="*{fin}">
     </div>
     <div class="entree">
         <label>Site :</label>
-        <input type="url">
+        <input type="url" th:field="*{url}">
     </div>
     <div class="envoi">
         <input class="enr" type = "submit" value="Enregistrer">
