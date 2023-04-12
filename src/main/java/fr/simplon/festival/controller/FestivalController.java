@@ -47,7 +47,7 @@ public class FestivalController {
         return "redirect:/";
     }*/
 
-    @GetMapping("/festivals")
+    @GetMapping("/")
     public String afficherFestivals(Model model){
         List<Festival> festivals = festivalDaoImpl.getAllFestivals();
         model.addAttribute("festivals", festivals);
