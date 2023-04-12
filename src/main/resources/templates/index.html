@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
@@ -8,8 +8,8 @@
 <body>
 <div class="accueil">
     <h1>Les festivals de votre région</h1>
-    <div class="carte"></div>
-    <button>Ajouter un festival</button>
+    <div id="carte"></div>
+    <button onclick="window.location.href = 'formulaire_ajout.html'">Ajouter un festival</button>
     <table class="liste_fest">
         <thead>
         <tr>
@@ -23,27 +23,20 @@
         </tr>
         </thead>
         <tbody>
-        <tr class="tpair">
-            <td id="nom"></td>
-            <td id="ville"></td>
-            <td id="lieu"></td>
-            <td id="debut"></td>
-            <td id="fin"></td>
-            <td id="site"></td>
-            <td id="edit"><button class = "edit">Éditer</button></td>
+        <tr th:each="festival : ${festivals}" th:style="${festival.id} % 2 == 0 ? background = white : background = lightgrey">
+            <td id="nom" th:text="${festival.nom}"></td>
+            <td id="ville" th:text="${festival.ville}"></td>
+            <td id="lieu" th:text="${festival.lieu}"></td>
+            <td id="debut" th:text="${festival.debut}"></td>
+            <td id="fin" th:text="${festival.fin}"></td>
+            <td id="site" th:text="${festival.url}"></td>
+            <td id="edit"><button class = "edit" onclick="window.location.href='formulaire_edit.html'">Éditer</button></td>
         </tr>
-        <tr class="timpair">
-            <td id="nom"></td>
-            <td id="ville"></td>
-            <td id="lieu"></td>
-            <td id="debut"></td>
-            <td id="fin"></td>
-            <td id="site"></td>
-            <td id="edit"><button class = "edit">Éditer</button></td>
-        </tr>
-        <tr class="tpair"></tr>
         </tbody>
     </table>
 </div>
+<!--<script th:each="festival : ${festivals}" th:object="${festival}" th:inline="javascript">
+    addMarkerOnMap([[*{lat}]], [[*{lon}]], [[*{nom}]], [[*{ville}]]);
+</script>-->
 </body>
 </html>
