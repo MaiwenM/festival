@@ -13,7 +13,7 @@ h1 {
 }
 .carte{
     width: 100%;
-    height: 100%;
+    height: 300px;
 }
 .liste_fest{
     width: 100%;
@@ -22,6 +22,12 @@ h1 {
 thead{
     width: 100%;
     background: white;
+    height: 30px;
+}
+tr{
+    text-align: center;
+    vertical-align: middle;
+    height: 37px;
 }
 tr:nth-child(even) {
     background-color: white;
