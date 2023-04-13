@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Ajouter un festival</title>
-  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="../static/style.css" data-th-href="@{/style.css}">
 </head>
 <body>
 <h1>Ajouter un formulaire</h1>
@@ -41,7 +41,7 @@
     <input type="number" th:field="*{lon}">
   </div>
   <div class="envoi">
-    <input class="enr" type = "submit" value="Enregistrer">
+    <input class="enr" type = "submit" value="Enregistrer" th:href="@{/index}">
   </div>
 </form>
 </body>

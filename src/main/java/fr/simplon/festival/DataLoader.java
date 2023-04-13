@@ -2,6 +2,7 @@ package fr.simplon.festival;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import fr.simplon.festival.dao.impl.FestivalRepository;
 import fr.simplon.festival.entity.Festival;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ public class DataLoader implements ApplicationRunner
         {
             ClassPathResource resource = new ClassPathResource("static/festivals.json");
             ObjectMapper objectMapper = new ObjectMapper();
-            List<Festival> festivals = objectMapper.readValue(
-                    resource.getInputStream(), new TypeReference<List<Festival>>(){});
+            objectMapper.registerModule(new JavaTimeModule());
+            List<Festival> festivals = objectMapper.readValue(resource.getInputStream(), new TypeReference<List<Festival>>(){});
             mFestivalRepository.saveAll(festivals);
         }
     }
