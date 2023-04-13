@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Edition d'un festival</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/style.css" data-th-href="@{/style.css}">
 </head>
 <body>
 <h1>Editer un festival</h1>
 <form class = "ajout">
     <div class="entree">
         <label>Nom :</label>
-        <input type="text" th:field="*{nom}">
+        <input type="text" th:text="${festival.nom}" th:field="*{nom}">
     </div>
     <div class="entree">
         <label>Ville :</label>
-        <input type="text" th:field="*{ville}">
+        <input type="text" th:text="${festival.ville}" th:field="*{ville}">
     </div>
     <div class="entree">
         <label>Lieu :</label>
-        <input type="text" th:field="*{lieu}">
+        <input type="text" th:text="${festival.lieu}" th:field="*{lieu}">
     </div>
     <div class="entree">
         <label>Date de début :</label>
-        <input type="date" th:field="*{debut}">
+        <input type="date" th:text="${festival.debut}" th:field="*{debut}">
     </div>
     <div class="entree">
         <label>Date de fin :</label>
-        <input type="date" th:field="*{fin}">
+        <input type="date" th:text="${festival.fin}" th:field="*{fin}">
     </div>
     <div class="entree">
         <label>Site :</label>
-        <input type="url" th:field="*{url}">
+        <input type="url" th:text="${festival.url}" th:field="*{url}">
+
     </div>
     <div class="envoi">
         <input class="enr" type = "submit" value="Enregistrer">

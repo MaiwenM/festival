@@ -1,3 +1,4 @@
+
 // La map Leaflet
 let mymap = L.map('carte').setView([48.202047, -2.932644], 8);
 // Ajout d'un layer sur la map pour afficher des tuiles avec les routes
@@ -14,13 +15,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
  * @param {string} festivalName Le nom du festival à afficher dans la popup.
  * @param {string} festivalVille La ville du festival à afficher dans la popup.
  */
-function addMarkerOnMap(lat, lon, festivalName, festivalVille) {
+function addMarkerOnMap(lat, lon, nom, ville) {
     // On ajoute une marque aux coordonnées fournies en paramètre
     marker = L.marker([lat, lon]).addTo(mymap);
     // Un popup qui s'affichera au-dessus du marqueur
-    let popup = L.popup().setContent(`<h2>${festivalName}</h2><h3>${festivalVille}</h3>`);
+    let popup = L.popup().setContent('<h2>'+nom+'</h2>'+ville);
     marker.bindPopup(popup);
     marker.addEventListener('click', (event) => {
         popup.openOn(mymap);
     });
 }
+
+const buttonAjout = document.getElementById("ajout");
+function allerVersAjout(){
+    window.location.href="formulaire_ajout.html";
+}
+
+buttonAjout.addEventListener('click', allerVersAjout);

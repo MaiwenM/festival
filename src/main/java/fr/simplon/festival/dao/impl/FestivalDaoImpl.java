@@ -5,6 +5,7 @@ import fr.simplon.festival.entity.Festival;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class FestivalDaoImpl implements FestivalDao {
     private FestivalRepository festivalRepository;
 
     @Override
-    public void saveFestival(String nom, String url, Date debut, Date fin, String ville, int cp, String lieu, double lat, double lon) {
+    public void saveFestival(String nom, String url, LocalDate debut, LocalDate fin, String ville, int cp, String lieu, double lat, double lon) {
         Festival festival = new Festival();
         festival.setNom(nom);
         festival.setUrl(url);
@@ -36,7 +37,7 @@ public class FestivalDaoImpl implements FestivalDao {
     }
 
     @Override
-    public void festivalEdit(Long id, String nom, String url, Date debut, Date fin, String ville, int cp, String lieu, double lat, double lon) {
+    public void festivalEdit(Long id, String nom, String url, LocalDate debut, LocalDate fin, String ville, int cp, String lieu, double lat, double lon) {
 
         Festival festival = festivalRepository.findById(id).orElse(null);
 

@@ -1,7 +1,11 @@
 package fr.simplon.festival.entity;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 @Entity @Table(name="festival")
 public class Festival {
@@ -14,9 +18,14 @@ public class Festival {
 
     private String url;
 
-    private Date debut;
-
-    private Date fin;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private LocalDate debut;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private LocalDate fin;
 
     private String ville;
 
@@ -52,19 +61,19 @@ public class Festival {
         this.url = url;
     }
 
-    public Date getDebut() {
+    public LocalDate getDebut() {
         return debut;
     }
 
-    public void setDebut(Date debut) {
+    public void setDebut(LocalDate debut) {
         this.debut = debut;
     }
 
-    public Date getFin() {
+    public LocalDate getFin() {
         return fin;
     }
 
-    public void setFin(Date fin) {
+    public void setFin(LocalDate fin) {
         this.fin = fin;
     }
 
