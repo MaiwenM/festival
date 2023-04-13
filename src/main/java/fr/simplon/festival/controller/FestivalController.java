@@ -51,7 +51,7 @@ public class FestivalController {
     public String afficherFestivals(Model model){
         List<Festival> festivals = festivalDaoImpl.getAllFestivals();
         model.addAttribute("festivals", festivals);
-        return "festivals";
+        return "index";
     }
 
 }
