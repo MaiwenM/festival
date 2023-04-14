@@ -32,10 +32,13 @@ function allerVersAjout(){
 }
 buttonAjout.addEventListener('click', allerVersAjout);
 
-const buttonEditer = document.getElementById("editer");
+const buttonsEditer = document.querySelectorAll(".edit");
+for (let i=0; i <buttonsEditer.length; i++){
+    let buttonEditer = buttonsEditer[i];
+    buttonEditer.addEventListener('click', event => allerVersEditer(event));
+}
 function allerVersEditer(event){
+    console.log(event)
     let idFest = event.target.attributes['idfestival'].nodeValue;
     window.location.href=`/formulaire_edit/${idFest}`;
 }
-
-buttonEditer.addEventListener('click', event => allerVersEditer(event));
