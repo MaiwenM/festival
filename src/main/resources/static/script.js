@@ -26,9 +26,10 @@ function addMarkerOnMap(lat, lon, nom, ville) {
     });
 }
 
-const buttonAjout = document.getElementById("ajout");
+ const buttonAjout = document.getElementById("ajout");
 function allerVersAjout(){
     window.location.href="formulaire_ajout.html";
 }
 
 buttonAjout.addEventListener('click', allerVersAjout);
+

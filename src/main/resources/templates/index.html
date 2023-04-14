@@ -32,7 +32,7 @@
             <td id="lieu" th:text="${festival.lieu}"></td>
             <td id="debut" th:text="${festival.debut}"></td>
             <td id="fin" th:text="${festival.fin}"></td>
-            <td id="site"><a th:href="${festival.url}"/><span th:text="${festival.nom}"></span></td>
+            <td id="site" th:text="${festival.url}"></td>
             <td id="edit"><button class = "edit" th:href="@{/formulaire_edit/{id}(id=${festival.id})}">Éditer</button></td>
         </tr>
         </tbody>
