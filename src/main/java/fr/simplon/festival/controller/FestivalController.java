@@ -9,18 +9,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import java.util.List;
-
 @Controller
 public class FestivalController {
 
     @Autowired
     private FestivalDao festivalDao;
 
-    @GetMapping("/formulaireAjout")
+    @GetMapping("/formulaire_ajout")
     public String afficherLaCarte(Model model) {
         model.addAttribute("festival", new Festival());
-        return "accueil";
+        return "formulaire_ajout";
     }
 
     @PostMapping("/ajoutFestival")
@@ -29,7 +27,7 @@ public class FestivalController {
         return "redirect:/";
     }
 
-    @GetMapping("/FormulaireEdit/{id}")
+    @GetMapping("/Formulaire_edit/{id}")
     public String afficherFormulaireEdition(@PathVariable("id") Long id, Model model) {
         Festival festival = festivalDao.getFestivalById(id);
         model.addAttribute("festival", festival);
@@ -44,11 +42,6 @@ public class FestivalController {
     }
 
     @GetMapping("/")
-    public String index(Model model){
-        return "redirect:/festivals";
-    }
-
-    @GetMapping("/festivals")
     public String afficherFestivals(Model model){
         List<Festival> festivals = festivalDao.getAllFestivals();
         model.addAttribute("festivals", festivals);
