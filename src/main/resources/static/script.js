@@ -28,7 +28,13 @@ function addMarkerOnMap(lat, lon, nom, ville) {
 
 const buttonAjout = document.getElementById("ajout");
 function allerVersAjout(){
-    window.location.href="formulaire_ajout.html";
+    window.location.href="/formulaire_ajout";
+}
+buttonAjout.addEventListener('click', allerVersAjout);
+
+const buttonEditer = document.getElementById("editer");
+function allerVersEditer(){
+    window.location.href="/formulaire_edit/{id}";
 }
 
-buttonAjout.addEventListener('click', allerVersAjout);
+buttonEditer.addEventListener('click', allerVersEditer);

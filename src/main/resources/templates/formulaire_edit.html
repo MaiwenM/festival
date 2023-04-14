@@ -10,27 +10,31 @@
 <form class = "ajout">
     <div class="entree">
         <label>Nom :</label>
-        <input type="text" th:text="${festival.nom}" th:field="*{nom}">
+        <input type="text" th:field="${festival.nom}">
+    </div>
+    <div class="entree">
+        <label>Code postal :</label>
+        <input type="text" th:field="${festival.cp}">
     </div>
     <div class="entree">
         <label>Ville :</label>
-        <input type="text" th:text="${festival.ville}" th:field="*{ville}">
+        <input type="text" th:field="${festival.ville}">
     </div>
     <div class="entree">
         <label>Lieu :</label>
-        <input type="text" th:text="${festival.lieu}" th:field="*{lieu}">
+        <input type="text" th:field="${festival.lieu}">
     </div>
     <div class="entree">
         <label>Date de début :</label>
-        <input type="date" th:text="${festival.debut}" th:field="*{debut}">
+        <input type="date" th:field="${festival.debut}">
     </div>
     <div class="entree">
         <label>Date de fin :</label>
-        <input type="date" th:text="${festival.fin}" th:field="*{fin}">
+        <input type="date" th:field="${festival.fin}">
     </div>
     <div class="entree">
         <label>Site :</label>
-        <input type="url" th:text="${festival.url}" th:field="*{url}">
+        <input type="url" th:field="${festival.url}">
 
     </div>
     <div class="envoi">
