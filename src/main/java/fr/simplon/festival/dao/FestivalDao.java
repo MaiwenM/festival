@@ -10,5 +10,11 @@ public interface FestivalDao {
 
     void saveFestival(String nom, String url, LocalDate debut, LocalDate fin, String ville, int cp, String lieu, double lat, double lon);
 
+    void saveFestival(Festival festival);
     List<Festival> getAllFestivals();
+
+    void festivalEdit(Long id, String nom, String url, LocalDate debut, LocalDate fin, String ville, int cp, String lieu, double lat, double lon);
+
+
+    Festival getFestivalById(Long id);
 }
