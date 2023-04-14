@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import java.util.List;
-
 @Controller
 public class FestivalController {
 
@@ -55,7 +53,4 @@ public class FestivalController {
         return "index";
     }
 }
-
-
-
 
