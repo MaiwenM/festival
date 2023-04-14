@@ -33,7 +33,7 @@
             <td id="debut" th:text="${festival.debut}"></td>
             <td id="fin" th:text="${festival.fin}"></td>
             <td id="site"><a th:href="${festival.url}"/><span th:text="${festival.nom}"></span></td>
-            <td id="edit"><button class = "edit" id="editer">Éditer</button></td>
+            <td id="edit"><button class = "edit" id="editer" th:attr="idfestival=${festival.id}">Éditer</button></td>
         </tr>
         </tbody>
     </table>
