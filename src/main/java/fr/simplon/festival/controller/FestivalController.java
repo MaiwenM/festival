@@ -15,8 +15,15 @@ public class FestivalController {
     @Autowired
     private FestivalDao festivalDao;
 
+    @GetMapping("/")
+    public String afficherFestivals(Model model){
+        List<Festival> festivals = festivalDao.getAllFestivals();
+        model.addAttribute("festivals", festivals);
+        return "index";
+    }
+
     @GetMapping("/formulaire_ajout")
-    public String AjoutFestival(Model model) {
+    public String AjouterFestival(Model model) {
         model.addAttribute("festival", new Festival());
         return "formulaire_ajout";
     }
@@ -41,12 +48,5 @@ public class FestivalController {
         return "redirect:/";
     }
 
-
-    @GetMapping("/")
-    public String afficherFestivals(Model model){
-        List<Festival> festivals = festivalDao.getAllFestivals();
-        model.addAttribute("festivals", festivals);
-        return "index";
-    }
 }
 
