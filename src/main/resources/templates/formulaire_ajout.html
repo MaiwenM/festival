@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Ajouter un formulaire</h1>
-<form class = "ajout">
+<form class = "ajout" action="/ajoutFestival" method="post" th:object="${festival}">
   <div class="entree">
     <label>Nom :</label>
     <input type="text" th:field="${festival.nom}">

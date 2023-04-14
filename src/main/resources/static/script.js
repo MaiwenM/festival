@@ -33,8 +33,9 @@ function allerVersAjout(){
 buttonAjout.addEventListener('click', allerVersAjout);
 
 const buttonEditer = document.getElementById("editer");
-function allerVersEditer(){
-    window.location.href="/formulaire_edit/{id}";
+function allerVersEditer(event){
+    let idFest = event.target.attributes['idfestival'].nodeValue;
+    window.location.href=`/formulaire_edit/${idFest}`;
 }
 
-buttonEditer.addEventListener('click', allerVersEditer);
+buttonEditer.addEventListener('click', event => allerVersEditer(event));
