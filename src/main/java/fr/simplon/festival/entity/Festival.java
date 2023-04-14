@@ -1,5 +1,6 @@
 package fr.simplon.festival.entity;
 
+import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;

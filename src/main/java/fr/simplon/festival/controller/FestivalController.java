@@ -48,3 +48,4 @@ public class FestivalController {
         return "index";
     }
 }
+
