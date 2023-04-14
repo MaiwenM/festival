@@ -15,10 +15,17 @@ public class FestivalController {
     @Autowired
     private FestivalDao festivalDao;
 
+    @GetMapping("/")
+    public String afficherFestivals(Model model){
+        List<Festival> festivals = festivalDao.getAllFestivals();
+        model.addAttribute("festivals", festivals);
+        return "index";
+    }
+
     @GetMapping("/formulaire_ajout")
-    public String afficherLaCarte(Model model) {
+    public String ajouterFestival(Model model){
         model.addAttribute("festival", new Festival());
-        return "formulaire_ajout";
+        return "/formulaire_ajout";
     }
 
     @PostMapping("/ajoutFestival")
@@ -27,7 +34,7 @@ public class FestivalController {
         return "redirect:/";
     }
 
-    @GetMapping("/Formulaire_edit/{id}")
+    @GetMapping("/formulaire_edit/{id}")
     public String afficherFormulaireEdition(@PathVariable("id") Long id, Model model) {
         Festival festival = festivalDao.getFestivalById(id);
         model.addAttribute("festival", festival);
@@ -35,17 +42,9 @@ public class FestivalController {
     }
 
     @PostMapping("/enregistrerModifFestival")
-    public String modifierFestival(@ModelAttribute("festival") Festival festival) {
-        //festival.setId(id); // mettre à jour l'identifiant du festival
+    public String modifierFestival(@ModelAttribute("festival") Festival festival){
         festivalDao.saveFestival(festival);
         return "redirect:/";
-    }
-
-    @GetMapping("/")
-    public String afficherFestivals(Model model){
-        List<Festival> festivals = festivalDao.getAllFestivals();
-        model.addAttribute("festivals", festivals);
-        return "index";
     }
 }
 
