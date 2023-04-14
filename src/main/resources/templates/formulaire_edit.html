@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Editer un festival</h1>
-<form class = "ajout">
+<form class = "ajout" action="/enregistrerModifFestival" method="post" th:object="${festival}">
     <div class="entree">
         <label>Nom :</label>
         <input type="text" th:field="${festival.nom}">
