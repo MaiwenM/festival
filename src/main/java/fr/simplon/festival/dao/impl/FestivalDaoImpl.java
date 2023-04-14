@@ -27,7 +27,6 @@ public class FestivalDaoImpl implements FestivalDao {
         festival.setLieu(lieu);
         festival.setLat(lat);
         festival.setLon(lon);
-
         festivalRepository.save(festival);
     }
 
@@ -50,10 +49,7 @@ public class FestivalDaoImpl implements FestivalDao {
         festival.setLieu(lieu);
         festival.setLat(lat);
         festival.setLon(lon);
-
         festivalRepository.save(festival);
-
-
     }
 
     @Override
@@ -66,3 +62,4 @@ public class FestivalDaoImpl implements FestivalDao {
         return festivalRepository.findById(id).orElse(null);
     }
 }
+
